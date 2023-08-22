@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.presupuestos2.controller.tabs.DetallesTabController">
+   <children>
+      <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <VBox fx:id="detallesTable" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <TextField fx:id="detalle1" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle2" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle3" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle4" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle5" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle6" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle7" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle8" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle9" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle10" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle11" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle12" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle13" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle14" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle15" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle16" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle17" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle18" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle19" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle20" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle21" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle22" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle23" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle24" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="detalle25" prefHeight="34.0" prefWidth="760.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

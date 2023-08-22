@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="662.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.presupuestos2.controller.tabs.TrabajosTabController">
+   <children>
+      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="473.0" prefWidth="679.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+             <content>
+                <VBox fx:id="trabajosTable" prefHeight="200.0" prefWidth="100.0">
+                   <children>
+                      <TextField fx:id="trabajo1" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo2" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo3" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo4" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo5" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo6" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo7" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo8" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo9" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo10" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo11" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo12" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo13" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo14" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo15" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo16" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo17" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo18" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo19" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo20" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo21" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo22" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo23" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo24" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                      <TextField fx:id="trabajo25" prefHeight="35.0" prefWidth="760.0">
+                         <font>
+                            <Font size="30.0" />
+                         </font>
+                      </TextField>
+                   </children>
+                </VBox>
+             </content>
+          </ScrollPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.input.KeyCodeCombination?>
+
+<MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.presupuestos2.controller.menubar.MenuBarController">
+   <menus>
+      <Menu mnemonicParsing="false" onShowing="#archivoAP" text="Archivo">
+         <items>
+            <MenuItem fx:id="elegirDestino" mnemonicParsing="false" onAction="#elegirDestinoAP" text="Elegir destino">
+               <accelerator>
+                  <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+               <graphic>
+                  <Label />
+               </graphic>
+            </MenuItem>
+            <MenuItem fx:id="cargar" mnemonicParsing="false" onAction="#cargarAP" text="Cargar">
+               <accelerator>
+                  <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+               <graphic>
+                  <Label />
+               </graphic>
+            </MenuItem>
+            <MenuItem fx:id="guardar" mnemonicParsing="false" onAction="#guardarAP" text="Guardar">
+               <accelerator>
+                  <KeyCodeCombination alt="UP" code="G" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+               <graphic>
+                  <Label fx:id="guardarLabel" text="(faltan rellenar campos)" textFill="RED" />
+               </graphic>
+            </MenuItem>
+            <MenuItem fx:id="guardarComo" mnemonicParsing="false" onAction="#guardarComoAP" text="Guardar como">
+               <accelerator>
+                  <KeyCodeCombination alt="UP" code="G" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+               </accelerator>
+               <graphic>
+                  <Label fx:id="guardarComoLabel" text="(faltan rellenar campos)" textFill="RED" />
+               </graphic>
+            </MenuItem>
+         </items>
+      </Menu>
+      <Menu mnemonicParsing="false" text="Edicion">
+         <items>
+            <MenuItem mnemonicParsing="false" onAction="#borrarTodoAP" text="Borrar todo">
+               <accelerator>
+                  <KeyCodeCombination alt="UP" code="B" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+            </MenuItem>
+         </items>
+      </Menu>
+      <Menu mnemonicParsing="false" text="Opciones">
+         <items>
+            <MenuItem mnemonicParsing="false" onAction="#colorAP" text="Color" />
+         </items>
+      </Menu>
+   </menus>
+</MenuBar>
