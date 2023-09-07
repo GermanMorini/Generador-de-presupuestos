@@ -2,44 +2,40 @@ package com.presupuestos2.model.pdffile;
 
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfPCell;
+import com.presupuestos2.model.Budget;
 
 public class MainTable extends PdfPTable {
 
-    final private PdfPCell content;
+        final private PdfPCell content;
 
-    public MainTable(
-            String cliente,
-            String fecha,
-            String total,
-            String[] trabajos,
-            String[] detalles)
-    {
-        super(1);
-        setSpacingBefore(10);
-        setSpacingAfter(10);
-        setWidthPercentage(85);
+        public MainTable(Budget b)
+        {
+                super(1);
+                setSpacingBefore(10);
+                setSpacingAfter(10);
+                setWidthPercentage(85);
 
-        content = new PdfPCell();
+                content = new PdfPCell();
 
-        content.addElement(new Text("Presupuesto", ALIGN_CENTER, (int) Text.getDefaultFont().getSize() + 2));
-        content.addElement(new InputText("Cliente", cliente));
-        content.addElement(new InputText("Fecha", fecha));
-        content.addElement(new Text("Trabajos:"));
-        addList(trabajos);
+                content.addElement(new Text("Presupuesto", ALIGN_CENTER, (int) Text.getDefaultFont().getSize() + 2));
+                content.addElement(new InputText("Cliente", b.getCliente()));
+                content.addElement(new InputText("Fecha", b.getFecha()));
+                content.addElement(new Text("Trabajos:"));
+                addList(b.getTrabajos());
 
-        if (!(detalles.length == 0)) {
-            content.addElement(new Text("Detalles:"));
-            addList(detalles);
+                if (!(b.getDetalles().length == 0)) {
+                        content.addElement(new Text("Detalles:"));
+                        addList(b.getDetalles());
+                }
+
+                content.addElement(new InputText("TOTAL PRESUPUESTO", b.getTotal(), Text.getSpacing() + 10));
+
+                addCell(content);
         }
 
-        content.addElement(new InputText("TOTAL PRESUPUESTO", "$" + total, Text.getSpacing() + 10));
-
-        addCell(content);
-    }
-
-    private void addList(String[] list) {
-        for (String elem : list) {
-            content.addElement(new Item(elem, '•'));
+        private void addList(String[] list) {
+                for (String elem : list) {
+                        content.addElement(new Item(elem, '•'));
+                }
         }
-    }
 }
