@@ -1,29 +1,39 @@
 package com.presupuestos2.model.other;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfReader;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.parser.PdfTextExtractor;
+import com.presupuestos2.MainApplication;
 import com.presupuestos2.model.Budget;
-import javafx.scene.control.Alert;
+import com.presupuestos2.model.pdffile.Img;
+import com.presupuestos2.model.pdffile.MainTable;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.FileInputStream;
 import java.util.Arrays;
 
-public class FileParser {
+public class FileManager {
 
-        public static Budget readPDF(String savePath) {
-                try {
-                        PdfReader reader = new PdfReader(new FileInputStream(savePath));
-                        String pdfContents = PdfTextExtractor.getTextFromPage(reader, 1);
-                        return getBudget(pdfContents);
-                } catch (IOException e) {
-                        e.printStackTrace();
-                        Dialog.showMessageDialog(Alert.AlertType.ERROR, e.getClass().getSimpleName(), e.getMessage(), "Error");
-                        return null;
-                }
+        public static void createFile(String savepath, Budget budget) throws IOException, DocumentException {
+                Document doc = new Document();
+                PdfWriter.getInstance(doc, new FileOutputStream(savepath));
+
+                doc.open();
+                doc.add(new Img(MainApplication.class.getResource("Data.png").getPath()).getImg());
+                doc.add(new MainTable(budget));
+                doc.close();
         }
 
-        private static Budget getBudget(String pdfContents) {
+        public static Budget loadFile(String savePath) throws IOException {
+                PdfReader reader = new PdfReader(new FileInputStream(savePath));
+                String pdfContents = PdfTextExtractor.getTextFromPage(reader, 1);
+                return parseString(pdfContents);
+        }
+
+        private static Budget parseString(String pdfContents) {
                 int clienteIndx = pdfContents.indexOf("Cliente: ");
                 int fechaIndx = pdfContents.indexOf("Fecha: ");
                 int trabajosIndx = pdfContents.indexOf("Trabajos:");
@@ -54,7 +64,7 @@ public class FileParser {
                 // Eliminar el título de la tabla (primer índice)
                 rtn = Arrays.copyOfRange(rtn, 1, rtn.length);
 
-                // Retirar los saltos de línea al final de cada trabajo (el útimo trabajo no tiene)
+                // Retirar los saltos de línea al final de cada trabajo (el último trabajo no tiene)
                 for (int i = 0; i < rtn.length - 1; i++) {
                         rtn[i] = rtn[i].substring(0, rtn[i].length() - 1);
                 }

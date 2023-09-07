@@ -39,7 +39,10 @@ public class Controller {
                 fecha.getEditor().setText("");
                 total.setText("");
 
-                setTableContent(trabajosTable, new String[]{});
+
+                trabajosTable.getChildren().forEach(field -> {
+                        ((TextField) field).setText("");
+                });
 
                 detallesTable.getChildren().forEach(field -> {
                         ((TextField) field).setText("");

@@ -1,13 +1,11 @@
 package com.presupuestos2.controller.menubar;
 
+import com.itextpdf.text.DocumentException;
 import com.presupuestos2.MainApplication;
 import com.presupuestos2.controller.Controller;
 import com.presupuestos2.model.Budget;
 import com.presupuestos2.model.other.Dialog;
-import com.presupuestos2.model.other.FileParser;
-import com.presupuestos2.model.pdffile.Img;
-import com.presupuestos2.model.pdffile.MainTable;
-import com.presupuestos2.model.pdffile.PDFDocument;
+import com.presupuestos2.model.other.FileManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -68,20 +66,30 @@ public class MenuBarController extends Controller implements Initializable {
 
         @FXML
         protected void cargarAP() {
-                File selectedFile = Dialog.showFileChooserDialog("Cargar presupuesto", new File(System.getProperty("user.home")));
-                Budget b = FileParser.readPDF(selectedFile.getPath());
+                try {
+                        File selectedFile = Dialog.showFileChooserDialog("Cargar presupuesto", new File(System.getProperty("user.home")));
+                        Budget b = FileManager.loadFile(selectedFile.getPath());
+                        destino.setText(selectedFile.getParent());
 
-                if (b != null) {
                         Controller.clearFields();
                         Controller.fillEntries(b);
-                        destino.setText(selectedFile.getParent());
+                } catch (IOException e) {
+                        e.printStackTrace();
+                        Dialog.showMessageDialog(Alert.AlertType.ERROR, e.getClass().getSimpleName(), e.getMessage(), "Error");
                 }
         }
 
         @FXML
         protected void guardarAP() {
-                String filePath = MainApplication.getSavePath() + File.separator + cliente.getText().strip() + ".pdf";
-                PDFDocument pdf = new PDFDocument(filePath, Controller.generateBudget());
+                try {
+                        String savepath = MainApplication.getSavePath() + File.separator + cliente.getText().strip() + ".pdf";
+                        FileManager.createFile(savepath, Controller.generateBudget());
+
+                        Dialog.showMessageDialog(Alert.AlertType.INFORMATION, "Información", "PDF generado con éxito en " + savepath, "Información");
+                } catch  (IOException | DocumentException e) {
+                        e.printStackTrace();
+                        Dialog.showMessageDialog(Alert.AlertType.ERROR, e.getClass().getSimpleName(), "Error al generar el PDF", "Error");
+                }
         }
 
         @FXML
