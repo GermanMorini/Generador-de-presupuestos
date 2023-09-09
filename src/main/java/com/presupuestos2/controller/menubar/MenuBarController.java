@@ -71,7 +71,7 @@ public class MenuBarController extends Controller implements Initializable {
                         Budget b = FileManager.loadFile(selectedFile.getPath());
                         destino.setText(selectedFile.getParent());
 
-                        Controller.clearFields();
+                        Controller.clearEntries();
                         Controller.fillEntries(b);
                 } catch (IOException e) {
                         e.printStackTrace();
@@ -105,7 +105,7 @@ public class MenuBarController extends Controller implements Initializable {
         @FXML
         protected void borrarTodoAP() {
                 Dialog.showConfirmDialog("Deseas borrar todas las entradas?", "Advertencia", response -> {
-                        if (response == javafx.scene.control.ButtonType.OK) Controller.clearFields();
+                        if (response == javafx.scene.control.ButtonType.OK) Controller.clearEntries();
                 });
         }
 

@@ -12,7 +12,7 @@
          <items>
             <MenuItem fx:id="elegirDestino" mnemonicParsing="false" onAction="#elegirDestinoAP" text="Elegir destino">
                <accelerator>
-                  <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                  <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                </accelerator>
                <graphic>
                   <Label />
@@ -20,7 +20,7 @@
             </MenuItem>
             <MenuItem fx:id="cargar" mnemonicParsing="false" onAction="#cargarAP" text="Cargar">
                <accelerator>
-                  <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                  <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                </accelerator>
                <graphic>
                   <Label />
@@ -28,7 +28,7 @@
             </MenuItem>
             <MenuItem fx:id="guardar" mnemonicParsing="false" onAction="#guardarAP" text="Guardar">
                <accelerator>
-                  <KeyCodeCombination alt="UP" code="G" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                  <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                </accelerator>
                <graphic>
                   <Label fx:id="guardarLabel" text="(faltan rellenar campos)" textFill="RED" />
@@ -36,7 +36,7 @@
             </MenuItem>
             <MenuItem fx:id="guardarComo" mnemonicParsing="false" onAction="#guardarComoAP" text="Guardar como">
                <accelerator>
-                  <KeyCodeCombination alt="UP" code="G" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                  <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
                </accelerator>
                <graphic>
                   <Label fx:id="guardarComoLabel" text="(faltan rellenar campos)" textFill="RED" />
@@ -48,7 +48,7 @@
          <items>
             <MenuItem mnemonicParsing="false" onAction="#borrarTodoAP" text="Borrar todo">
                <accelerator>
-                  <KeyCodeCombination alt="UP" code="B" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                  <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                </accelerator>
             </MenuItem>
          </items>

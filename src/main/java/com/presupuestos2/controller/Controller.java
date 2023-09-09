@@ -34,21 +34,6 @@ public class Controller {
                 }
         }
 
-        public static void clearFields() {
-                cliente.setText("");
-                fecha.getEditor().setText("");
-                total.setText("");
-
-
-                trabajosTable.getChildren().forEach(field -> {
-                        ((TextField) field).setText("");
-                });
-
-                detallesTable.getChildren().forEach(field -> {
-                        ((TextField) field).setText("");
-                });
-        }
-
         public static void fillEntries(Budget budget) {
                 cliente.setText(budget.getCliente());
                 fecha.getEditor().setText(budget.getFecha());
@@ -57,11 +42,20 @@ public class Controller {
                 setTableContent(detallesTable, budget.getDetalles());
         }
 
+        public static void clearEntries() {
+                cliente.setText("");
+                fecha.getEditor().setText("");
+                total.setText("");
+
+                trabajosTable.getChildren().forEach(field -> ((TextField) field).setText(""));
+                detallesTable.getChildren().forEach(field -> ((TextField) field).setText(""));
+        }
+
         public static boolean allFieldsCompleted() {
                 return cliente.getText() != null && !cliente.getText().isBlank() &&
                           total.getText() != null && !total.getText().isBlank() &&
-                          getTableContent(trabajosTable).length != 0 &&
-                          fecha.getEditor().getText() != null && !fecha.getEditor().getText().isBlank();
+                          fecha.getEditor().getText() != null && !fecha.getEditor().getText().isBlank() &&
+                          getTableContent(trabajosTable).length != 0;
         }
 
         public static Budget generateBudget() {

@@ -29,19 +29,4 @@ public class DatosTabController extends Controller implements Initializable {
         protected void destinoC() {
                 elegirDestino.fire();
         }
-
-        @FXML
-        protected void guardarBtnAP() {
-                guardar.fire();
-        }
-
-        @FXML
-        protected void guardarComoBtnAP() {
-                guardarComo.fire();
-        }
-
-        @FXML
-        protected void cargarBtnAP() {
-                cargar.fire();
-        }
 }

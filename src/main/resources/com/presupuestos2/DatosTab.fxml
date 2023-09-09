@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="477.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.presupuestos2.controller.tabs.DatosTabController">
+<AnchorPane prefHeight="477.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.presupuestos2.controller.tabs.DatosTabController">
    <children>
       <GridPane layoutY="6.0" prefHeight="208.0" prefWidth="762.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
          <columnConstraints>
@@ -82,20 +76,5 @@
             </TextField>
          </children>
       </GridPane>
-      <Button fx:id="guardarBtn" layoutX="14.0" layoutY="239.0" mnemonicParsing="false" onAction="#guardarBtnAP" prefHeight="55.0" prefWidth="162.0" text="Guardar" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="270.0">
-         <font>
-            <Font name="System Bold" size="30.0" />
-         </font>
-      </Button>
-      <Button fx:id="guardarComoBtn" layoutX="188.0" layoutY="239.0" mnemonicParsing="false" onAction="#guardarComoBtnAP" prefHeight="55.0" prefWidth="250.0" text="Guardar como" AnchorPane.leftAnchor="186.0" AnchorPane.topAnchor="270.0">
-         <font>
-            <Font name="System Bold" size="30.0" />
-         </font>
-      </Button>
-      <Button fx:id="cargarBtn" layoutX="466.0" layoutY="239.0" mnemonicParsing="false" onAction="#cargarBtnAP" prefHeight="55.0" prefWidth="162.0" text="Cargar" AnchorPane.leftAnchor="446.0" AnchorPane.topAnchor="270.0">
-         <font>
-            <Font name="System Bold" size="30.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

@@ -33,21 +33,21 @@ public class FileManager {
                 return parseString(pdfContents);
         }
 
+        // TODO: si hago algún cambio en el modelo del PDF esto debe cambiar
         private static Budget parseString(String pdfContents) {
                 int clienteIndx = pdfContents.indexOf("Cliente: ");
                 int fechaIndx = pdfContents.indexOf("Fecha: ");
                 int trabajosIndx = pdfContents.indexOf("Trabajos:");
                 int detallesIndx= pdfContents.indexOf("Detalles:");
-                int totalIndx = pdfContents.indexOf("TOTAL PRESUPUESTO: $");
-                boolean hasDetalles = detallesIndx > 0;
+                int totalIndx = pdfContents.indexOf("TOTAL PRESUPUESTO: ");
 
                 String cliente = pdfContents.substring(clienteIndx, fechaIndx - 1).split(": ")[1];
                 String fecha = pdfContents.substring(fechaIndx, trabajosIndx - 1).split(": ")[1];
-                String total = pdfContents.substring(totalIndx).split(": ")[1].substring(1);
+                String total = pdfContents.substring(totalIndx).split(": ")[1];
                 String[] trabajos = {};
                 String[] detalles = {};
 
-                if (hasDetalles) {
+                if (detallesIndx != 0) {
                         trabajos = getTableContentFromString(pdfContents, trabajosIndx, detallesIndx - 1);
                         detalles = getTableContentFromString(pdfContents, detallesIndx, totalIndx - 1);
                 } else {
