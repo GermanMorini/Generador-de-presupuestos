@@ -50,41 +50,38 @@ public class CalculadoraTabController extends Controller implements Initializabl
                 pantalla.setText(pantalla.getText().replaceAll("π", "pi"));
         }
 
-        public static void setPrecision(int p) {
-                PRECISION = p;
-        }
+        @FXML
+        private Button suma, mult, div, resta, par1, par2, punto, _0, _00;
+        @FXML
+        private Spinner<String> precision;
+        @FXML
+        private ToggleButton shift;
+        @FXML
+        private TextField pantalla;
+        @FXML
+        private ContextMenu pantallaCM;
 
-        @FXML
-        protected Button suma, mult, div, resta, par1, par2, punto, _0, _00;
-        @FXML
-        protected Spinner<String> precision;
-        @FXML
-        protected ToggleButton shift;
-        @FXML
-        protected TextField pantalla;
-        @FXML
-        protected ContextMenu pantallaCM;
 
-        // MANTIENE EL FOCO EN EL TF PANTALLA
+        // MANTIENE EL FOCO EN LA PANTALLA
         @FXML
-        protected void anchorPaneMC() {
+        private void anchorPaneMC() {
                 pantalla.requestFocus();
                 pantalla.end();
         }
-
         @FXML
-        protected void precisionMC() {
+        private void precisionMC() {
                 System.out.println("awdawd");
         }
 
+
         // FLECHAS DE DIRECCIÓN
         @FXML
-        protected void rightArrowAP() {
+        private void rightArrowAP() {
                 pantalla.requestFocus();
                 pantalla.positionCaret(pantalla.getCaretPosition() + 1);
         }
         @FXML
-        protected void leftArrowAP() {
+        private void leftArrowAP() {
                 pantalla.requestFocus();
                 pantalla.positionCaret(pantalla.getCaretPosition() - 1);
         }
@@ -92,7 +89,7 @@ public class CalculadoraTabController extends Controller implements Initializabl
 
         // OPERADORES
         @FXML
-        protected void shiftC() {
+        private void shiftC() {
                 shiftMod(suma,
                             "+", e -> {
                                     e.consume();
@@ -189,7 +186,7 @@ public class CalculadoraTabController extends Controller implements Initializabl
                             });
         }
         @FXML
-        protected void resAP() {
+        private void resAP() {
                 // El MenuItem del historial
                 MenuItem mi = new MenuItem();
                 mi.setText(pantalla.getText() + " = ");
@@ -217,50 +214,50 @@ public class CalculadoraTabController extends Controller implements Initializabl
                 pantallaCM.getItems().add(mi);
         }
         @FXML
-        protected void delAP() {pantalla.clear();}
+        private void delAP() {pantalla.clear();}
         @FXML
-        protected void borrarAP() {pantalla.deletePreviousChar();}
+        private void borrarAP() {pantalla.deletePreviousChar();}
         @FXML
-        protected void ansAP() {insertText(answer);}
+        private void ansAP() {insertText(answer);}
         @FXML
-        protected void puntoAP() {insertText(",");}
+        private void puntoAP() {insertText(",");}
         @FXML
-        protected void sumaAP() {insertText("+");}
+        private void sumaAP() {insertText("+");}
         @FXML
-        protected void restaAP() {insertText("-");}
+        private void restaAP() {insertText("-");}
         @FXML
-        protected void multAP() {insertText("*");}
+        private void multAP() {insertText("*");}
         @FXML
-        protected void divAP() {insertText("/");}
+        private void divAP() {insertText("/");}
         @FXML
-        protected void par1AP() {insertText("(");}
+        private void par1AP() {insertText("(");}
         @FXML
-        protected void par2AP() {insertText(")");}
+        private void par2AP() {insertText(")");}
         @FXML
-        protected void porcAP() {insertText("%");}
+        private void porcAP() {insertText("%");}
 
 
         // NÚMEROS
         @FXML
-        protected void _1AP() {insertText("1");}
+        private void _1AP() {insertText("1");}
         @FXML
-        protected void _2AP() {insertText("2");}
+        private void _2AP() {insertText("2");}
         @FXML
-        protected void _3AP() {insertText("3");}
+        private void _3AP() {insertText("3");}
         @FXML
-        protected void _4AP() {insertText("4");}
+        private void _4AP() {insertText("4");}
         @FXML
-        protected void _5AP() {insertText("5");}
+        private void _5AP() {insertText("5");}
         @FXML
-        protected void _6AP() {insertText("6");}
+        private void _6AP() {insertText("6");}
         @FXML
-        protected void _7AP() {insertText("7");}
+        private void _7AP() {insertText("7");}
         @FXML
-        protected void _8AP() {insertText("8");}
+        private void _8AP() {insertText("8");}
         @FXML
-        protected void _9AP() {insertText("9");}
+        private void _9AP() {insertText("9");}
         @FXML
-        protected void _0AP() {insertText("0");}
+        private void _0AP() {insertText("0");}
         @FXML
-        protected void _00AP() {insertText("00");}
+        private void _00AP() {insertText("00");}
 }

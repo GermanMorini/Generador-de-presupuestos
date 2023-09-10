@@ -15,7 +15,7 @@ public class Controller {
         protected static MenuItem guardar, guardarComo, elegirDestino, cargar;
         protected static Label guardarLabel, guardarComoLabel;
 
-        public static String[] getTableContent(Pane table) {
+        protected static String[] getTableContent(Pane table) {
                 ArrayList<String> content = new ArrayList<>();
 
                 table.getChildren().forEach(field -> {
@@ -28,13 +28,13 @@ public class Controller {
                 return content.toArray(new String[] {});
         }
 
-        public static void setTableContent(Pane table, String[] content) {
+        protected static void setTableContent(Pane table, String[] content) {
                 for (int i = 0; i < content.length; i++) {
                         ((TextField) table.getChildren().get(i)).setText(content[i]);
                 }
         }
 
-        public static void fillEntries(Budget budget) {
+        protected static void fillEntries(Budget budget) {
                 cliente.setText(budget.getCliente());
                 fecha.getEditor().setText(budget.getFecha());
                 total.setText(budget.getTotal());
@@ -42,7 +42,7 @@ public class Controller {
                 setTableContent(detallesTable, budget.getDetalles());
         }
 
-        public static void clearEntries() {
+        protected static void clearEntries() {
                 cliente.setText("");
                 fecha.getEditor().setText("");
                 total.setText("");
@@ -51,14 +51,14 @@ public class Controller {
                 detallesTable.getChildren().forEach(field -> ((TextField) field).setText(""));
         }
 
-        public static boolean allFieldsCompleted() {
+        protected static boolean allFieldsCompleted() {
                 return cliente.getText() != null && !cliente.getText().isBlank() &&
                           total.getText() != null && !total.getText().isBlank() &&
                           fecha.getEditor().getText() != null && !fecha.getEditor().getText().isBlank() &&
                           getTableContent(trabajosTable).length != 0;
         }
 
-        public static Budget generateBudget() {
+        protected static Budget generateBudget() {
                 return new Budget(
                           cliente.getText().strip(),
                           fecha.getEditor().getText().strip(),

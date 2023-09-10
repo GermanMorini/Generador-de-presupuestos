@@ -24,5 +24,5 @@ public class TrabajosTabController extends Controller implements Initializable {
                 });
         }
 
-        @FXML protected VBox trabajosTable;
+        @FXML private VBox trabajosTable;
 }

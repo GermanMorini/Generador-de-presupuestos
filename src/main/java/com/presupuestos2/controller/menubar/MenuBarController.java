@@ -34,11 +34,11 @@ public class MenuBarController extends Controller implements Initializable {
                 Controller.cargar = cargar;
         }
 
-        @FXML protected MenuItem guardar, guardarComo, elegirDestino, cargar;
-        @FXML protected Label guardarLabel, guardarComoLabel;
+        @FXML private Label guardarLabel, guardarComoLabel;
+        @FXML private MenuItem guardar, guardarComo, elegirDestino, cargar;
 
         @FXML
-        protected void archivoAP() {
+        private void archivoAP() {
                 if (allFieldsCompleted()) {
                         guardar.setDisable(false);
                         guardarComo.setDisable(false);
@@ -53,7 +53,7 @@ public class MenuBarController extends Controller implements Initializable {
         }
 
         @FXML
-        protected void elegirDestinoAP() {
+        private void elegirDestinoAP() {
                 File selectedDirectory = showDirectoryChooserDialog("Elegir destino");
 
                 if (selectedDirectory != null) {
@@ -65,14 +65,14 @@ public class MenuBarController extends Controller implements Initializable {
         }
 
         @FXML
-        protected void cargarAP() {
+        private void cargarAP() {
                 try {
                         File selectedFile = Dialog.showFileChooserDialog("Cargar presupuesto", new File(System.getProperty("user.home")));
                         Budget b = FileManager.loadFile(selectedFile.getPath());
                         destino.setText(selectedFile.getParent());
 
-                        Controller.clearEntries();
-                        Controller.fillEntries(b);
+                        clearEntries();
+                        fillEntries(b);
                 } catch (IOException e) {
                         e.printStackTrace();
                         Dialog.showMessageDialog(Alert.AlertType.ERROR, e.getClass().getSimpleName(), e.getMessage(), "Error");
@@ -80,10 +80,10 @@ public class MenuBarController extends Controller implements Initializable {
         }
 
         @FXML
-        protected void guardarAP() {
+        private void guardarAP() {
                 try {
                         String savepath = MainApplication.getSavePath() + File.separator + cliente.getText().strip() + ".pdf";
-                        FileManager.createFile(savepath, Controller.generateBudget());
+                        FileManager.createFile(savepath, generateBudget());
 
                         Dialog.showMessageDialog(Alert.AlertType.INFORMATION, "Información", "PDF generado con éxito en " + savepath, "Información");
                 } catch  (IOException | DocumentException e) {
@@ -93,7 +93,7 @@ public class MenuBarController extends Controller implements Initializable {
         }
 
         @FXML
-        protected void guardarComoAP() {
+        private void guardarComoAP() {
                 String oldSavePath = MainApplication.getSavePath();
                 elegirDestinoAP();
 
@@ -103,14 +103,14 @@ public class MenuBarController extends Controller implements Initializable {
         }
 
         @FXML
-        protected void borrarTodoAP() {
+        private void borrarTodoAP() {
                 Dialog.showConfirmDialog("Deseas borrar todas las entradas?", "Advertencia", response -> {
-                        if (response == javafx.scene.control.ButtonType.OK) Controller.clearEntries();
+                        if (response == javafx.scene.control.ButtonType.OK) clearEntries();
                 });
         }
 
         @FXML
-        protected void colorAP() {
+        private void colorAP() {
                 //TODO: escribir función para el menu item color
                 System.out.println("TODO: escribir función para el menu item color");
         }

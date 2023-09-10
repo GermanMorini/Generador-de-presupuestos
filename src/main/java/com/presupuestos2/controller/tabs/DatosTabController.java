@@ -22,11 +22,11 @@ public class DatosTabController extends Controller implements Initializable {
                 destino.setText(MainApplication.getSavePath());
         }
 
-        @FXML protected TextField cliente, total, destino;
-        @FXML protected DatePicker fecha;
+        @FXML private TextField cliente, total, destino;
+        @FXML private DatePicker fecha;
 
         @FXML
-        protected void destinoC() {
+        private void destinoC() {
                 elegirDestino.fire();
         }
 }
