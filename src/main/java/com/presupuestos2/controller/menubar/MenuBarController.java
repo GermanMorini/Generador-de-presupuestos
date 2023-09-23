@@ -2,7 +2,7 @@ package com.presupuestos2.controller.menubar;
 
 import com.itextpdf.text.DocumentException;
 import com.presupuestos2.MainApplication;
-import com.presupuestos2.controller.Controller;
+import com.presupuestos2.controller.MainController;
 import com.presupuestos2.model.Budget;
 import com.presupuestos2.model.other.Dialog;
 import com.presupuestos2.model.other.FileManager;
@@ -22,16 +22,16 @@ import static com.presupuestos2.MainApplication.setSavePath;
 import static com.presupuestos2.model.other.Dialog.showDirectoryChooserDialog;
 import static com.presupuestos2.model.other.Dialog.showMessageDialog;
 
-public class MenuBarController extends Controller implements Initializable {
+public class MenuBarController extends MainController implements Initializable {
 
         @Override
         public void initialize(URL location, ResourceBundle resources) {
-                Controller.guardar = guardar;
-                Controller.guardarLabel = guardarLabel;
-                Controller.guardarComo = guardarComo;
-                Controller.guardarComoLabel = guardarComoLabel;
-                Controller.elegirDestino = elegirDestino;
-                Controller.cargar = cargar;
+                MainController.guardar = guardar;
+                MainController.guardarLabel = guardarLabel;
+                MainController.guardarComo = guardarComo;
+                MainController.guardarComoLabel = guardarComoLabel;
+                MainController.elegirDestino = elegirDestino;
+                MainController.cargar = cargar;
         }
 
         @FXML private Label guardarLabel, guardarComoLabel;

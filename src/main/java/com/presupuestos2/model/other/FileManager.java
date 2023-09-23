@@ -35,11 +35,11 @@ public class FileManager {
 
         // TODO: si hago algún cambio en el modelo del PDF esto debe cambiar
         private static Budget parseString(String pdfContents) {
-                int clienteIndx = pdfContents.indexOf("Cliente: ");
-                int fechaIndx = pdfContents.indexOf("Fecha: ");
-                int trabajosIndx = pdfContents.indexOf("Trabajos:");
-                int detallesIndx= pdfContents.indexOf("Detalles:");
-                int totalIndx = pdfContents.indexOf("TOTAL PRESUPUESTO: ");
+                short clienteIndx = (short) pdfContents.indexOf("Cliente: ");
+                short fechaIndx = (short) pdfContents.indexOf("Fecha: ");
+                short trabajosIndx = (short) pdfContents.indexOf("Trabajos:");
+                short detallesIndx= (short) pdfContents.indexOf("Detalles:");
+                short totalIndx = (short) pdfContents.indexOf("TOTAL PRESUPUESTO: ");
 
                 String cliente = pdfContents.substring(clienteIndx, fechaIndx - 1).split(": ")[1];
                 String fecha = pdfContents.substring(fechaIndx, trabajosIndx - 1).split(": ")[1];
@@ -58,14 +58,13 @@ public class FileManager {
         }
 
         private static String[] getTableContentFromString(String pdfContents, int beginIndx, int endIndx) {
-                String[] rtn;
-                rtn = pdfContents.substring(beginIndx, endIndx).split("• ");
+                String[] rtn = pdfContents.substring(beginIndx, endIndx).split("• ");
 
                 // Eliminar el título de la tabla (primer índice)
                 rtn = Arrays.copyOfRange(rtn, 1, rtn.length);
 
                 // Retirar los saltos de línea al final de cada trabajo (el último trabajo no tiene)
-                for (int i = 0; i < rtn.length - 1; i++) {
+                for (byte i = 0; i < rtn.length - 1; i++) {
                         rtn[i] = rtn[i].substring(0, rtn[i].length() - 1);
                 }
 

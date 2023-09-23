@@ -8,16 +8,16 @@ import javafx.scene.layout.Pane;
 
 public class SymbolsContextMenu extends ContextMenu {
 
-        private final String[] SYMBOLS = {"Ø", "/", "&", "$", "∡", "⟂", "∥", "∦"};
+        private final char[] SYMBOLS = {'Ø', '/', '&', '$', '∡', '⟂', '∥', '∦'};
 
         public SymbolsContextMenu(Pane pane) {
-                for(String s : SYMBOLS) {
-                        MenuItem mi = new MenuItem(s);
+                for(char s : SYMBOLS) {
+                        MenuItem mi = new MenuItem(s + "");
 
                         mi.setOnAction(e -> {
                                 e.consume();
                                 TextInputControl tf = (TextInputControl) pane.getChildren().filtered(Node::isFocused).get(0);
-                                tf.insertText(tf.getCaretPosition(), s);
+                                tf.insertText(tf.getCaretPosition(), s + "");
                         });
 
                         getItems().add(mi);

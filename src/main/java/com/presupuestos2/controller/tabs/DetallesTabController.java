@@ -1,6 +1,6 @@
 package com.presupuestos2.controller.tabs;
 
-import com.presupuestos2.controller.Controller;
+import com.presupuestos2.controller.MainController;
 import com.presupuestos2.model.SymbolsContextMenu;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,11 +10,11 @@ import javafx.scene.layout.VBox;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class DetallesTabController extends Controller implements Initializable {
+public class DetallesTabController extends MainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Controller.detallesTable = detallesTable;
+        MainController.detallesTable = detallesTable;
 
         SymbolsContextMenu cm = new SymbolsContextMenu(detallesTable);
 

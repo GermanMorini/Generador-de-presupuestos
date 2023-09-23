@@ -1,6 +1,6 @@
 package com.presupuestos2.controller.tabs;
 
-import com.presupuestos2.controller.Controller;
+import com.presupuestos2.controller.MainController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,7 +14,7 @@ import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
-public class CalculadoraTabController extends Controller implements Initializable {
+public class CalculadoraTabController extends MainController implements Initializable {
 
         @Override
         public void initialize(URL location, ResourceBundle resources) {
@@ -22,7 +22,7 @@ public class CalculadoraTabController extends Controller implements Initializabl
         }
 
         private String answer;
-        private static int PRECISION = 2;
+        private static short PRECISION = 2;
 
         private void insertText(String txt) {
                 pantalla.insertText(pantalla.getCaretPosition(), txt);

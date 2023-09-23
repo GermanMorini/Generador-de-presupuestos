@@ -1,7 +1,7 @@
 package com.presupuestos2.controller.tabs;
 
 import com.presupuestos2.MainApplication;
-import com.presupuestos2.controller.Controller;
+import com.presupuestos2.controller.MainController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
@@ -10,14 +10,14 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class DatosTabController extends Controller implements Initializable {
+public class DatosTabController extends MainController implements Initializable {
 
         @Override
         public void initialize(URL location, ResourceBundle resources) {
-                Controller.cliente = cliente;
-                Controller.fecha = fecha;
-                Controller.total = total;
-                Controller.destino = destino;
+                MainController.cliente = cliente;
+                MainController.fecha = fecha;
+                MainController.total = total;
+                MainController.destino = destino;
 
                 destino.setText(MainApplication.getSavePath());
         }
